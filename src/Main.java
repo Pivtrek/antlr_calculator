@@ -7,6 +7,12 @@ public class Main {
         while (true){
             String input = scanner.nextLine().trim;
 
+            if (input.equalsIgnoreCase("exit")) {
+                System.out.println("Zamykanie programu...");
+                break;
+            }
+
+
         }
     }
 }
