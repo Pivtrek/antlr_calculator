@@ -7,3 +7,7 @@ expr: expr op=('*'|'/') expr
     | INT
     | '(' expr ')'
     ;
+
+//Lexer rules
+
+INT: [0-9]+ ; //Liczby całkowite
