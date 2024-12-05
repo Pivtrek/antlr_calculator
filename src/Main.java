@@ -12,7 +12,25 @@ public class Main {
                 break;
             }
 
+            try{
+                CharStream inputStream = CharStreams.fromString(input);
+                CalculatorLexer lexer = new CalculatorLexer(inputStream);
+                CommonTokenStream tokens = new CommonTokenStream(lexer);
+                CalculatorParser parser = new CalculatorParser(tokens);
 
+                // Parsowanie wejścia
+                ParseTree tree = parser.expr();
+
+                // Wyświetlenie drzewa składniowego
+                System.out.println("Drzewo składniowe:");
+                System.out.println(tree.toStringTree(parser));
+            }
+
+            catch (Exception e){
+                System.out.println("Błąd składniowy: " + e.getMessage());
+            }
         }
+
+        scanner.close();
     }
 }
