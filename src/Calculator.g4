@@ -11,3 +11,4 @@ expr: expr op=('*'|'/') expr
 //Lexer rules
 
 INT: [0-9]+ ; //Liczby całkowite
+WS: [ \t\r\n]+ -> skip ; //Pomijanie białych znaków
